@@ -10415,6 +10415,7 @@ a.text-dark:focus {
 
 body {
   font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
+  background-color: white;
 }
 
 /* app.blade */
@@ -10463,4 +10464,14 @@ body {
   margin: 19px 0;
   color: #c1c1c1;
 }
+
+/* User regitster page */
+
+.register-page img.captcha {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+/* User show page */
 

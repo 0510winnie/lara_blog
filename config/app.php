@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -182,6 +182,7 @@ return [
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
