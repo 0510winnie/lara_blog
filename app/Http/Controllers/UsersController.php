@@ -10,6 +10,10 @@ use App\Handlers\ImageUploadHandler;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,6 +64,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+      $this->authorize('update', $user);
       return view('users.edit', compact('user'));
       //和show方法一樣接受$user用戶作為傳參, url:/users/1/edit 會讀取id為1用戶並注入到此方法
       //為隱性model route binding
@@ -74,7 +79,7 @@ class UsersController extends Controller
      */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
-        
+        $this->authorize('update', $user);
         $data = $request->all();
         
         if($request->avatar){
