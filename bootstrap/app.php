@@ -16,6 +16,7 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
@@ -41,6 +42,8 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+
+$app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

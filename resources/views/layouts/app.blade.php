@@ -18,6 +18,7 @@
     @include('layouts._header')
 
     <div class="container app_container">
+      @include('common.message')
       @yield('content')
     </div>
 

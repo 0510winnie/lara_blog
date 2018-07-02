@@ -15,7 +15,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'introduction', 'avatar'
+        //只有在此屬性定義的字段才允許修改，否則忽略
+        //防止用戶對模型數據進行修改
     ];
 
     /**
