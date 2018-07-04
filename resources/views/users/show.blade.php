@@ -2,7 +2,7 @@
 @section('title',$user->name,'的用戶中心')
 @section('content')
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-2 ">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{ $user->avatar }}" alt="{{ $user->name }}">
       <div class="card-body">
