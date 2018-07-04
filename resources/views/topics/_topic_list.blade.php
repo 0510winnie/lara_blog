@@ -18,7 +18,6 @@
           <hr>
           <p class="card-text"> </p>
           <a href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">{{ $topic->title }}</a>
-          
         </div>
         <div class="card-footer topic-card-footer">
           <i class="fa fa-clock-o" style="color:CORAL" aria-hidden="true"></i>
@@ -29,4 +28,8 @@
       </div>
     </div>
   @endforeach 
+  @else
+  <div class="empty-block">
+    暫無動態
+  </div>
 @endif
