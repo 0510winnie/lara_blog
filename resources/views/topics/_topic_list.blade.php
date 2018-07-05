@@ -21,7 +21,7 @@
         </div>
         <div class="card-footer topic-card-footer">
           <i class="fa fa-clock-o" style="color:CORAL" aria-hidden="true"></i>
-            <span class="timeago topic-span" title="最後活躍於">{{ $topic->updated_at->diffForHumans() }}</span>
+            <span class="timeago topic-span" title="最後活躍於">{{ $topic->created_at->diffForHumans() }}</span>
           <i class="fa fa-comments-o" style="color:PERU" aria-hidden="true"></i>
             <span class="timeago">{{ $topic->reply_count }} 回覆</span>
         </div>

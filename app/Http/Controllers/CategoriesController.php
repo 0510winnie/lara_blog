@@ -9,10 +9,13 @@ use App\User;
 
 class CategoriesController extends Controller
 {
-    public function show(Category $category)
+    public function show(Category $category, Request $request, Topic $topic)
     {
-      $topics = Topic::where('category_id', $category->id)->paginate(9);
+      $topics = $topic->withOrder($request->order)
+                ->where('category_id', $category->id)
+                ->paginate(9);
       //讀取分類id關聯的topics
+
       return view('topics.index', compact('topics', 'category'));
       //傳$topics 和分類到view template中
       

@@ -16,8 +16,9 @@
 
     <h1 class="my-4"></h1>
     <div class="list-group shadow-sm p-3 mb-5 bg-white rounded ">
-      <a href="#" class="list-group-item borderless">最新發佈</a>
-      <a href="#" class="list-group-item borderless">最後回覆</a>
+      <a href="{{ Request::url() }}?order=default" class="list-group-item borderless {{ active_class( ! if_query('order','recent')) }}">最後回覆</a>
+      <a href="{{ Request::url() }}?order=recent" class="list-group-item borderless {{ active_class(if_query('order','recent')) }}">最新發佈</a>
+      {{-- Request::url()獲取的是當前請求的url --}}
     </div>
 
   </div>

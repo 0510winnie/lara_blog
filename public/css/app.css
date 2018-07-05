@@ -13482,6 +13482,13 @@ a:hover {
   text-decoration: none;
 }
 
+.list-group-item.active {
+  z-index: 2;
+  color: #292828ed;
+  background-color: #e9ecefc2;
+  border-color: #ffffff;
+}
+
 /* app.blade */
 
 .app_container {
