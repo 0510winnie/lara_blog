@@ -6,17 +6,13 @@
     <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
       <img class="card-img-top" src="{{ $user->avatar }}" alt="{{ $user->name }}">
       <div class="card-body">
-        <h5 class="card-title">自我介紹</h5>
+        <h6 class="card-title">自我介紹</h6>
         <p class="card-text">{{ $user->introduction }}</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">用戶名：{{ $user->name }}</li>
         <li class="list-group-item">註冊於：{{$user->created_at->diffForHumans() }}</li>
       </ul>
-      <div class="card-body">
-        <a href="{{ route('users.edit', $user->id) }}" class="card-link">編輯</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
     </div>
   </div>
 
