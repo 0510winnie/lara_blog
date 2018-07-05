@@ -14,7 +14,7 @@
               </a>
           </h6>
           <i class="fa fa-folder-open" style="color:PERU" aria-hidden="true"></i>
-          <a href="#" title="{{ $topic->category->name }}">{{ $topic->category->name }}</a>
+          <a href="{{ route('categories.show', $topic->category->id) }}" title="{{ $topic->category->name }}">{{ $topic->category->name }}</a>
           <hr>
           <p class="card-text"> </p>
           <a href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">{{ $topic->title }}</a>

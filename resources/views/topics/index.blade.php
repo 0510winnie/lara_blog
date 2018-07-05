@@ -1,11 +1,18 @@
 @extends('layouts.app')
-@section('title', '動態列表')
+@section('title', isset($category) ? $category->name : '動態列表')
 
 @section('content')
 
 <div class="row">
 
   <div class="col-lg-3">
+
+    @if(isset($category))
+      <div class="alert alert-dismissible alert-secondary" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{{ $category->name }} :</strong> {{ $category->description }}
+      </div>
+    @endif
 
     <h1 class="my-4"></h1>
     <div class="list-group shadow-sm p-3 mb-5 bg-white rounded ">

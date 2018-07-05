@@ -7,12 +7,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item {{ active_class(if_route('topics.index')) }}">
+              <a class="nav-link js-scroll-trigger" href="{{ route('topics.index') }}">動態</a>
+          </li>
+          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',1))) }}">
+              <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 1) }}">分享</a>
+          </li>
+          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',2))) }}">
+              <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 2) }}">課程</a>
+          </li>
+          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',3))) }}">
+              <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 3) }}">問答</a>
+          </li>
+          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',4))) }}">
+              <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 4) }}">公告</a>
+          </li>
           @guest
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Log in</a>
+            <a class="nav-link js-scroll-trigger" href="{{ route('login') }}"><i class="fa fa-user-o" style="color:OLIVE" aria-hidden="true"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('register') }}">Register</a>
+            <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"><i class="fa fa-user-plus" style="color:DARKKHAKI" aria-hidden="true"></i></a>
           </li>
           @else
           <li class="nav-item dropdown">

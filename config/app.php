@@ -150,6 +150,7 @@ return [
          * Package Service Providers...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        HieuLe\Active\ActiveServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Overtrue\LaravelLang\TranslationServiceProvider::class,
@@ -177,6 +178,7 @@ return [
 
     'aliases' => [
 
+        'Active' => HieuLe\Active\Facades\Active::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
