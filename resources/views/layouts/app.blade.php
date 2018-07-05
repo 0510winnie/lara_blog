@@ -12,6 +12,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+  
 </head>
 <body>
   <div id="app" class="{{ route_class() }}-page">
