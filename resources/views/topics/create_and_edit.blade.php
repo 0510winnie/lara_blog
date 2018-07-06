@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-10 offset-md-1">
         <div class="card card-default shadow p-3 mb-5 bg-white rounded">
 
             <div class="card-body">
@@ -56,5 +57,6 @@
         </div>
     </div>
 </div>
- 
+
 @endsection
+

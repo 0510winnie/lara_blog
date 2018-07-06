@@ -14,7 +14,10 @@
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-  
+
+  <!-- Text Editor -->
+    @include('common._editor_style')
+
 </head>
 <body>
   <div id="app" class="{{ route_class() }}-page">
@@ -30,6 +33,7 @@
 
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}"></script>
+   @include('common._editor_scripts')
   
 </body>
 </html>
