@@ -18,6 +18,9 @@
     <div class="list-group shadow-sm p-3 mb-5 bg-white rounded ">
       <a href="{{ Request::url() }}?order=default" class="list-group-item borderless {{ active_class( ! if_query('order','recent')) }}">最後回覆</a>
       <a href="{{ Request::url() }}?order=recent" class="list-group-item borderless {{ active_class(if_query('order','recent')) }}">最新發佈</a>
+      <a href="{{ route('topics.create') }}" class="list-group-item borderless">
+          新增動態
+        </a>
       {{-- Request::url()獲取的是當前請求的url --}}
     </div>
 

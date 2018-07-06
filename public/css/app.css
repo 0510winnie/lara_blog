@@ -13513,6 +13513,10 @@ a:hover {
   margin-top: 6px;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 /* Sticky footer styles */
 
 html {
