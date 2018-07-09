@@ -42,7 +42,8 @@ class TopicPolicy
      */
     public function update(User $user, Topic $topic)
     {
-        return $topic->user_id == $user->id;
+        return $user->isAuthorOf($topic);
+        //is AuthorOf 定義在user model
         //在授權策略裡，返回true即可訪問，返回false為拒絕訪問
     }
 
@@ -53,8 +54,8 @@ class TopicPolicy
      * @param  \App\Topic  $topic
      * @return mixed
      */
-    public function delete(User $user, Topic $topic)
+    public function destroy(User $user, Topic $topic)
     {
-        return $topic->user_id == $user->id;
+        return $user->isAuthorOf($topic);
     }
 }
