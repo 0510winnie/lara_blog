@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TopicRequest;
+use App\Handlers\ImageUploadHandler;
 use App\Topic;
 use App\Category;
 use App\User;
@@ -39,14 +40,41 @@ class TopicsController extends Controller
       $topic->user_id = Auth::id();
       $topic->save();
 
-      return redirect()->route('topics.show', $topic->id)->with('message', 'Created Successfully!');
+      return redirect()->route('topics.show', $topic->id)->with('message', '動態發布成功!');
     }
 
-    public function show($id)
+    public function show(Topic $topic)
     {
-        $topic = Topic::find($id);
 
         return view('topics.show', compact('topic'));
     }
 
+    public function uploadImage(Request $request, ImageUploader $uploader)
+    {
+      
+    }
+
+    public function edit(Topic $topic)
+    {
+      $this->authorize('update', $topic);
+      //TopicPolicy
+      return view('topics.create_and_edit', compact('topic'));
+    }
+
+    public function update(TopicRequest $request, Topic $topic)
+    {
+      $this->authorize('update', $topic);
+      $topic->update($request->all());
+
+      return redirect()->route('topics.show', $topic->id)->with('success', '更新成功！');
+    }
+
+    public function destroy(Topic $topic)
+    {
+      $this->authorize('destroy', $topic);
+      $topic->delete();
+
+      return redirect()->back()->with('success', '刪除成功！');
+    }
 }
+

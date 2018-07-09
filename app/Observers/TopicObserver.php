@@ -41,6 +41,8 @@ class TopicObserver
 
     public function saving(Topic $topic)
     {
+      $topic->body = clean($topic->body, 'user_topic_body');
+      //user_topic_body 是我們在config裡面為topic body所設置的
       $topic->excerpt = make_excerpt($topic->body);
     }
 }

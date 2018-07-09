@@ -7,4 +7,11 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/js/froala_editor.pkgd.min.js"></script>
 
 <!-- Initialize the editor. -->
-<script> $(function() { $('textarea').froalaEditor() }); </script>
+<script> 
+$(function() { $('#editor').froalaEditor({
+             imageUploadURL: '{{ route('topics.upload_image') }}',
+             imageUploadParam: { _token: '{{ csrf_token() }}' },
+
+    });
+ }); 
+</script>

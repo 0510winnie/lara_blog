@@ -46,7 +46,7 @@
                       </a>
                   </li>
                   <li>
-                      <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
+                      <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">
                         <span><i class="fa fa-pencil-square-o font-awe" style="color:GOLD" aria-hidden="true"></i></span>
                         編輯個人資料
                       </a>
