@@ -40,12 +40,17 @@ class TopicsController extends Controller
       $topic->user_id = Auth::id();
       $topic->save();
 
-      return redirect()->route('topics.show', $topic->id)->with('message', '動態發布成功!');
+      return redirect()->to($topic->link())->with('message', '動態發布成功!');
     }
 
-    public function show(Topic $topic)
+    public function show(Request $request, Topic $topic)
     {
-
+        // URL矯正
+        if(!empty($topic->slug) && $topic->slug != $request->slug){
+          return redirect($topic->link(), 301);
+          //如果slug不為空，且slug != 請求的路由參數slug
+          //301 永久重定向到正確url上
+        }
         return view('topics.show', compact('topic'));
     }
 

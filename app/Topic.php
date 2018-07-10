@@ -54,5 +54,12 @@ class Topic extends Model
 
     //When the functon is called, don't need to add the prefix scope
 
+    public function link($params = [])
+    {
+      return route('topics.show', array_merge([$this->id, $this->slug], $params));
+      //指名此方法中的params必須是array，因為調用了array_merge function
+      //此function的參數是array
+    }
+
     
 }

@@ -154,6 +154,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Overtrue\LaravelLang\TranslationServiceProvider::class,
+        Overtrue\LaravelPinyin\ServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
         /*
          * Application Service Providers...
@@ -205,6 +206,7 @@ return [
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'Pinyin' => Overtrue\LaravelPinyin\Facades\Pinyin::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,

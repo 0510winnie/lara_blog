@@ -17,7 +17,7 @@
           <a href="{{ route('categories.show', $topic->category->id) }}" title="{{ $topic->category->name }}">{{ $topic->category->name }}</a>
           <hr>
           <p class="card-text"> </p>
-          <a href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">{{ $topic->title }}</a>
+          <a href="{{ $topic->link() }}" title="{{ $topic->title }}">{{ $topic->title }}</a>
         </div>
         <div class="card-footer topic-card-footer">
           <i class="fa fa-clock-o" style="color:CORAL" aria-hidden="true"></i>
