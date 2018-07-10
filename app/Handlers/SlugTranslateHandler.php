@@ -48,7 +48,7 @@ class SlugTranslateHandler
 
     //dd($result)
     //    array:3 [▼
-    //   "from" => "zh"
+    //   "from" => "cht"
     //   "to" => "en"
     //   "trans_result" => array:1 [▼
     //       0 => array:2 [▼
