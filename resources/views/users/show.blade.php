@@ -25,19 +25,21 @@
           <div class="card-body">
               <ul class="nav nav-tabs">
                   <li class="nav-item">
-                    <a class="nav-link active " data-toggle="tab" href="#home">{{ $user->name }} 的動態</a>
+                    <a class="nav-link  {{ active_class(if_query('tab', null)) }}"  href="{{ route('users.show', $user->id) }}">{{ $user->name }} 的動態</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#profile">
+                    <a class="nav-link  {{ active_class(if_query('tab', 'replies')) }}" href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">
                       <i class="fa fa-comments" style="color:LIGHTGREY" aria-hidden="true"></i>
-                      回覆
+                      {{ $user->name }} 的回覆
                     </a>
                   </li>
                  
                 </ul>
-                <div id="myTabContent" class="tab-content">
-                  @include('users._topics', ['topics'=> $user->topics()->recent()->paginate(6)])
-                </div>
+                  @if(if_query('tab','replies'))
+                    @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
+                  @else
+                    @include('users._topics', ['topics'=> $user->topics()->recent()->paginate(6)])
+                  @endif
           </div>
         </div>
   </div>

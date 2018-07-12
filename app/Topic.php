@@ -19,6 +19,11 @@ class Topic extends Model
       return $this->belongsTo(User::class);
     }
 
+    public function replies()
+    {
+      return $this->hasMany(Reply::class);
+    }
+
     //透過以上關聯設定，後面開發可透過 $topic->user, $topic->category 
     //來獲取對應的分類和作者
 
@@ -61,5 +66,6 @@ class Topic extends Model
       //此function的參數是array
     }
 
-    
+  
+
 }

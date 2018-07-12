@@ -57,7 +57,13 @@
         </div>
       </div>
     </div>
+    {{-- topic card ends --}}
+
+    {{-- replies card starts --}}
+    @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+    {{-- replies card ends --}}
   </div>
+  {{-- col-md-8 ml-md-auto end --}}
 </div>
 </div>
 
