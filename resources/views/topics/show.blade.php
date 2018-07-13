@@ -60,6 +60,7 @@
     {{-- topic card ends --}}
 
     {{-- replies card starts --}}
+    @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic ])
     @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
     {{-- replies card ends --}}
   </div>
