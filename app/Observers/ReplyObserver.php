@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Reply;
+use App\Notifications\TopicReplied;
 
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
@@ -12,9 +13,12 @@ class ReplyObserver
 {
     public function created(Reply $reply)
     {
-      $reply->topic->increment('reply_count', 1);
+      $topic = $reply->topic;
+      $topic->increment('reply_count', 1);
       //$reply->topic = $reply->topic()->get()
       //動態屬性，得到collection
+
+      $topic->user->notify(new TopicReplied($reply));
     }
     //我們監控created事件，當eloquent模型數據成功創建時
     //created 方法將會被調用

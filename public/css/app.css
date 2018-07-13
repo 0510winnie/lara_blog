@@ -13632,3 +13632,9 @@ a.borderless {
   margin-top: 20px;
 }
 
+/* Notifications index */
+
+.info a {
+  color: darkgoldenrod;
+}
+

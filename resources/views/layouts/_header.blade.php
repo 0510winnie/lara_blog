@@ -30,6 +30,14 @@
             <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"><i class="fa fa-user-plus" style="color:DARKKHAKI" aria-hidden="true"></i></a>
           </li>
           @else
+          {{-- 消息通知標記 --}}
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ route('notifications.index') }}">
+                <span class="badge badge-{{ Auth::user()->notification_count > 0 ? 'warning':'light'}}" title="消息提醒">
+                  {{ Auth::user()->notification_count }}
+                </span>
+              </a>
+          </li>
           <li class="nav-item dropdown nav-img">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
