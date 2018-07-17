@@ -6,7 +6,7 @@ use App\User;
 use App\Reply;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ReplyPolicy
+class ReplyPolicy 
 {
     use HandlesAuthorization;
 
@@ -15,8 +15,10 @@ class ReplyPolicy
      *
      * @return void
      */
+
+   
     public function destroy(User $user, Reply $reply)
     {
-      return $user->isAuthorOf($reply) || $user->isAuthorOf($reply->topic);
+        return $user->isAuthorOf($reply) || $user->isAuthorOf($reply->topic);
     }
 }

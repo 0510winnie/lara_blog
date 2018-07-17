@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 use App\Reply;
 use App\Http\Requests\ReplyRequest;
 
@@ -72,9 +73,9 @@ class RepliesController extends Controller
      */
     public function destroy(Reply $reply)
     {
-          $this->authorize('destroy', $reply);
-          $reply->delete();
+        $this->authorize('destroy', $reply);
+        $reply->delete();
 
-          return redirect()->route('replies.index')->with('sucess', '刪除成功！');
+        return redirect()->to($reply->topic->link())->with('success', '成功删除回复！');
     }
 }

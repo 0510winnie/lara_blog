@@ -29,5 +29,10 @@ class ReplyObserver
 
       // topic 回覆內容限定和reply內容無異，因此這裡使用一樣的過濾規則
     }
+
+    public function deleted(Reply $reply)
+    {
+      $reply->topic->decrement($reply_count, 1);
+    }
 }
 

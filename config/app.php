@@ -156,6 +156,7 @@ return [
         Overtrue\LaravelLang\TranslationServiceProvider::class,
         Overtrue\LaravelPinyin\ServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */

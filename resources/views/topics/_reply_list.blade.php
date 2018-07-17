@@ -8,8 +8,10 @@
           {{ $reply->user->name }}
         </a>
       </span>
+      {{-- 回覆刪除按鈕 --}}
+      @can('destroy', $reply)
       <span class="float-right ">
-      <form action="" method="POST">
+      <form action="{{ route('replies.destroy', $reply->id) }}" method="POST">
           {{ csrf_field() }} 
           {{ method_field('DELETE') }}
           <button type="submit" class="btn btn-outline-warning shadow p-1 mb-2  rounded">
@@ -18,6 +20,7 @@
           </button>
         </form>
       </span>
+      @endcan
     </div>
 
     <div class="card-body">
