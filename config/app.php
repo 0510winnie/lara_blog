@@ -157,6 +157,8 @@ return [
         Overtrue\LaravelPinyin\ServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Frozennode\Administrator\AdministratorServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

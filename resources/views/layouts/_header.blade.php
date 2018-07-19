@@ -47,6 +47,15 @@
               </a>
 
               <ul class="dropdown-menu ml-auto shadow mb-5 bg-white rounded" role="menu">
+                @can('manage_contents')
+                  <li>
+                      <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                        <span><i class="fa fa-cog font-awe" style="color:OLIVE" aria-hidden="true"></i></span>
+                         管理後台
+                      </a>
+                  </li>
+                @endcan
+
                   <li>
                       <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
                         <span><i class="fa fa-user-circle font-awe" style="color:SANDYBROWN" aria-hidden="true"></i></span>

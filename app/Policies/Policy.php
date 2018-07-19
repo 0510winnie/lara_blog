@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Policies;
+
+use App\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class Policy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
+    public function before($user, $ability)
+    {
+        //如果用戶擁有管理內容的權限的話，即授權通過
+        if($user->can('manage_contents')){
+          return true;
+        }
+    }
+}

@@ -32,7 +32,8 @@ class TopicReplied extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['database','mail'];
+        return ['database'];
+        // return ['database','mail'];
         //via 方法決定了通知在哪個頻道上發送
         //這裡寫上database來作為通知的頻道
     }
