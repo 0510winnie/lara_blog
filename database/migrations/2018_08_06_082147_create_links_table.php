@@ -15,6 +15,8 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title')->comment('資源描述');
+            $table->string('link')->comment('資源的link');
             $table->timestamps();
         });
     }

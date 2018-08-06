@@ -8,6 +8,7 @@ use App\Handlers\ImageUploadHandler;
 use App\Topic;
 use App\Category;
 use App\User;
+use App\Link;
 use Auth;
 
 class TopicsController extends Controller
@@ -18,14 +19,15 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Request $request, Topic $topic, User $user)
+    public function index(Request $request, Topic $topic, User $user, Link $link)
     {
       $topics = $topic->withOrder($request->order)->paginate(9);
       // use User $user 型別提示 == $user = New User;
       $active_users = $user->getActiveUsers();
-      // dd($active_users);
       //$request->order 是獲取 /topics?order=recent中的order參數
-      return view('topics.index', compact('topics', 'active_users'));
+      $links = $link->getAllCached();
+      //use type hint Link $link to instantiate an instance of linke & call the method
+      return view('topics.index', compact('topics', 'active_users', 'links'));
 
     }
 

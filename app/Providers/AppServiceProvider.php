@@ -16,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \App\Topic::observe(\App\Observers\TopicObserver::class);
         \App\Reply::observe(\App\Observers\ReplyObserver::class);
+        \App\Link::observe(\App\Observers\LinkObserver::class);
         \Carbon\Carbon::setLocale('zh-TW');
         
     }

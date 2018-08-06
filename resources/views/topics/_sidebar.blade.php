@@ -14,4 +14,16 @@
       </a>
     @endforeach
   </div>
-  @endif
+@endif
+
+{{-- Resource Links --}}
+@if(count($links))
+  <div class="list-group shadow-sm p-3 mb-5 mt-10 bg-white rounded ">
+    <h6 class="text-center"><i class="fa fa-list-alt mr-2 " style="color:CHOCOLATE" aria-hidden="true"></i>推薦資源</h6>
+      @foreach($links as $link)
+        <a href=" {{ $link->link }}" class="list-group-item borderless">
+          {{ $link->title }}
+        </a>
+      @endforeach
+    </div>
+@endif
