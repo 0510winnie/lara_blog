@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('test', 'PagesController@test');
+Route::get('test2', 'PagesController@test2');
 Route::get('/', 'PagesController@root')->name('root');
 
 Auth::routes();

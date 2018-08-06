@@ -19,7 +19,11 @@ class TranslateSlug implements ShouldQueue
      * Create a new job instance.
      *
      * @return void
+     * 
      */
+
+    protected $topic;
+    
     public function __construct(Topic $topic)
     {
         $this->topic = $topic;

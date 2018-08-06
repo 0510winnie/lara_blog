@@ -18,11 +18,14 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Request $request, Topic $topic)
+    public function index(Request $request, Topic $topic, User $user)
     {
       $topics = $topic->withOrder($request->order)->paginate(9);
+      // use User $user 型別提示 == $user = New User;
+      $active_users = $user->getActiveUsers();
+      // dd($active_users);
       //$request->order 是獲取 /topics?order=recent中的order參數
-      return view('topics.index', compact('topics'));
+      return view('topics.index', compact('topics', 'active_users'));
 
     }
 
