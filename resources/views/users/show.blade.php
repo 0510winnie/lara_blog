@@ -12,6 +12,7 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item">用戶名：{{ $user->name }}</li>
         <li class="list-group-item">註冊於：{{$user->created_at->diffForHumans() }}</li>
+        <li class="list-group-item">最後活躍於：{{$user->last_actived_at->diffForHumans() }}</li>
       </ul>
     </div>
   </div>

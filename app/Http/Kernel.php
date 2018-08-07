@@ -26,7 +26,9 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    //定義中間件組
     protected $middlewareGroups = [
+      //web中間件組，應用於 routes/web.php路由文件
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -35,8 +37,11 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            //紀錄用戶最後活躍時間
+            \App\Http\Middleware\RecordLastActivedTime::class,
         ],
 
+        // API 中間件組，應用於 routes/api.php路由文件
         'api' => [
             'throttle:60,1',
             'bindings',
