@@ -15,11 +15,11 @@
     @endif
 
     <h1 class="my-4"></h1>
-    <div class="list-group shadow-sm p-3 mb-5 bg-white rounded ">
-      <a href="{{ Request::url() }}?order=default" class="list-group-item borderless {{ active_class( ! if_query('order','recent')) }}">最後回覆</a>
-      <a href="{{ Request::url() }}?order=recent" class="list-group-item borderless {{ active_class(if_query('order','recent')) }}">最新發佈</a>
-      <a href="{{ route('topics.create') }}" class="list-group-item borderless">
-          新增動態
+    <div class="list-group shadow p-3 mb-5 bg-white rounded ">
+      <a href="{{ Request::url() }}?order=default" class="list-group-item borderless {{ active_class( ! if_query('order','recent')) }}"><i class="fa fa-plane font-awe nav-top-title" aria-hidden="true"></i>Latest Replies</a>
+      <a href="{{ Request::url() }}?order=recent" class="list-group-item nav-top-title borderless {{ active_class(if_query('order','recent')) }}"><i class="fa fa-rocket font-awe nav-top-title" aria-hidden="true"></i>Latest Feeds</a>
+      <a href="{{ route('topics.create') }}" class="list-group-item nav-top-title borderless">
+        <i class="fa fa-cloud font-awe nav-top-title" aria-hidden="true"></i>New Feeds
         </a>
       {{-- Request::url()獲取的是當前請求的url --}}
     </div>
@@ -46,7 +46,7 @@
           <img class="d-block img-fluid" src="{{ asset('/carousel_images/3.jpg') }}" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="{{ asset('/carousel_images/2.jpg') }}" alt="Third slide">
+          <img class="d-block img-fluid" src="{{ asset('/carousel_images/2.png') }}" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Gaegu);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,600);@charset "UTF-8";
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -3087,7 +3087,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-sans-serif: "Roboto", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -3126,7 +3126,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -9321,7 +9321,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -9446,7 +9446,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -13470,7 +13470,9 @@ a.text-dark:focus {
 
 body {
   background-color: white;
-  font-family: 'Gaegu', cursive;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(156, 251, 249, 0.678)), to(rgba(150, 101, 214, 0.945)));
+  background-image: linear-gradient(to right bottom, rgba(156, 251, 249, 0.678), rgba(150, 101, 214, 0.945));
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -13484,7 +13486,8 @@ a:hover {
 
 .list-group-item.active {
   z-index: 2;
-  color: #292828ed;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(106, 236, 229, 0.288)), to(rgba(140, 145, 218, 0.945)));
+  background-image: linear-gradient(to right bottom, rgba(106, 236, 229, 0.288), rgba(140, 145, 218, 0.945));
   background-color: #e9ecefc2;
   border-color: #ffffff;
 }
@@ -13505,7 +13508,8 @@ a:hover {
   border-top: 4px solid white;
   margin-bottom: 50px;
   margin-top: 0px;
-  font-family: serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .nav-img {
@@ -13515,6 +13519,15 @@ a:hover {
 
 .img-circle {
   border-radius: 50%;
+}
+
+.nav-top-title {
+  background-image: -webkit-gradient(linear, left top, right top, from(#4568DC), to(#B06AB3));
+  background-image: linear-gradient(to right, #4568DC, #B06AB3);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 15.6px;
+  font-weight: 500;
 }
 
 /* Sticky footer styles */
@@ -13565,7 +13578,7 @@ body {
 
 .badge-light {
   color: white;
-  background-color: #baa25b;
+  background-color: lightskyblue;
   font-weight: lighter;
 }
 
@@ -13601,7 +13614,8 @@ body {
 }
 
 .topics-index-page a:hover {
-  color: LIGHTGRAY;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(106, 236, 229, 0.288)), to(rgba(140, 145, 218, 0.945)));
+  background-image: linear-gradient(to right bottom, rgba(106, 236, 229, 0.288), rgba(140, 145, 218, 0.945));
   text-decoration: none;
 }
 
@@ -13636,5 +13650,17 @@ a.borderless {
 
 .info a {
   color: darkgoldenrod;
+}
+
+.recommend-list {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(63, 94, 251, 0.658)), to(rgba(252, 70, 106, 0.548)));
+  background-image: linear-gradient(to right bottom, rgba(63, 94, 251, 0.658), rgba(252, 70, 106, 0.548));
+}
+
+.recommend-list-item {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(225, 230, 245, 0.884)), to(rgba(228, 189, 189, 0.815)));
+  background-image: linear-gradient(to right bottom, rgba(225, 230, 245, 0.884), rgba(228, 189, 189, 0.815));
+  border: none;
+  font-weight: 500;
 }
 

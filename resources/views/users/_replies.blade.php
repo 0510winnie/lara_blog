@@ -10,14 +10,14 @@
       </div>
 
       <span class="badge badge-light badge-pill float-right">
-        回覆於 {{ $reply->created_at->diffForHumans() }}
+        Reply At: {{ $reply->created_at->diffForHumans() }}
       </span>
     </li>
     @endforeach
   </ul>
 
   @else
-    <div class="empty-block">暫無回覆</div>
+    <div class="empty-block">No replies</div>
   @endif {{-- 分頁 --}}
   <div class="pag-margin">
     {!! $replies->appends(Request::except('page'))->render() !!}

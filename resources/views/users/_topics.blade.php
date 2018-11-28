@@ -4,14 +4,14 @@
     <li class="list-group-item d-flex justify-content-between align-items-center shadow-sm p-3 mb-5 bg-white rounded">
       <a href="{{ route('topics.show', $topic->id) }}">{{ $topic->title }}</a>
       <span class="badge badge-light badge-pill">{{ $topic->reply_count }} 
-        回覆
+        Replies
       </span>
     </li>
   @endforeach
   </ul>
 
   @else
-    <div class="empty-block">暫無動態</div>
+    <div class="empty-block">No Feeds Yet</div>
 @endif
 
 {{-- 分頁 --}}

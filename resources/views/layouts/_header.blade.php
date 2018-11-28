@@ -1,33 +1,33 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-static-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{ route('root') }}"><img src="{{ asset('/other_images/logo.png') }}" alt="logo" ></a>
+      <a class="navbar-brand js-scroll-trigger" href="{{ route('root') }}"><img src="{{ asset('/other_images/logo2.jpg') }}" alt="logo" ></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item {{ active_class(if_route('topics.index')) }}">
+          <li class="nav-item nav-top-title {{ active_class(if_route('topics.index')) }}">
               <a class="nav-link js-scroll-trigger" href="{{ route('topics.index') }}">Topics</a>
           </li>
-          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',1))) }}">
+          <li class="nav-item nav-top-title {{ active_class((if_route('categories.show') && if_route_param('category',1))) }}">
               <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 1) }}">Share</a>
           </li>
-          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',2))) }}">
+          <li class="nav-item nav-top-title {{ active_class((if_route('categories.show') && if_route_param('category',2))) }}">
               <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 2) }}">Courses</a>
           </li>
-          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',3))) }}">
+          <li class="nav-item nav-top-title {{ active_class((if_route('categories.show') && if_route_param('category',3))) }}">
               <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 3) }}">Q&A</a>
           </li>
-          <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category',4))) }}">
+          <li class="nav-item nav-top-title {{ active_class((if_route('categories.show') && if_route_param('category',4))) }}">
               <a class="nav-link js-scroll-trigger" href="{{ route('categories.show', 4) }}">News</a>
           </li>
           @guest
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('login') }}"><i class="fa fa-user-o" style="color:OLIVE" aria-hidden="true"></i></a>
+            <a class="nav-link js-scroll-trigger" href="{{ route('login') }}"><i class="fa fa-user-o nav-top-title"  aria-hidden="true"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"><i class="fa fa-user-plus" style="color:DARKKHAKI" aria-hidden="true"></i></a>
+            <a class="nav-link js-scroll-trigger" href="{{ route('register') }}"><i class="fa fa-user-plus nav-top-title" aria-hidden="true"></i></a>
           </li>
           @else
           {{-- 消息通知標記 --}}

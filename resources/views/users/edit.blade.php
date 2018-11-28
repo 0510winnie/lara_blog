@@ -6,7 +6,7 @@
   <div class="col-md-8 offset-md-2">
     <div class="card">
       <div class="card-header">
-        編輯用戶資料
+        User Edit
       </div>
       @include('common.error')
       <div class="card-body">

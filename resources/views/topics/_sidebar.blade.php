@@ -18,10 +18,10 @@
 
 {{-- Resource Links --}}
 @if(count($links))
-  <div class="list-group shadow-sm p-3 mb-5 mt-10 bg-white rounded ">
-    <h6 class="text-center"><i class="fa fa-list-alt mr-2 " style="color:CHOCOLATE" aria-hidden="true"></i>推薦資源</h6>
+  <div class="list-group recommend-list shadow p-3 mb-5 mt-10 bg-white rounded ">
+    <h6 class="text-center"><i class="fa fa-heart mr-2" aria-hidden="true" style="color:WHITE"></i></h6>
       @foreach($links as $link)
-        <a href=" {{ $link->link }}" class="list-group-item borderless">
+        <a href=" {{ $link->link }}" class="list-group-item borderless recommend-list-item nav-top-title">
           {{ $link->title }}
         </a>
       @endforeach
